@@ -22,11 +22,11 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t rajatrokde/portfolio:${{ github.sha }} .
-          docker push rajatrokde/portfolio:${{ github.sha }}
+          docker build -t rajatrokde/portfolio:latest .
+          docker push rajatrokde/portfolio:latest
 
       - name: Deploy container
         run: |
           docker stop mycontainer || true
           docker rm mycontainer || true
-          docker run -d -p 80:80 --name website rajatrokde/portfolio:${{ github.sha }}
+          docker run -d -p 80:80 --name website rajatrokde/portfolio:latest
