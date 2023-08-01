@@ -23,11 +23,11 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t rajatrokde/portfolio:latest .
-          docker push rajatrokde/portfolio:latest
+          docker build -t rajatrokde/portfolio:v1 .
+          docker push rajatrokde/portfolio:v1
 
       - name: Deploy container
         run: |
           docker stop mycontainer || true
           docker rm mycontainer || true
-          docker run -d -p 80:80 --name website rajatrokde/portfolio:latest
+          docker run -d -p 80:80 --name website rajatrokde/portfolio:v1
