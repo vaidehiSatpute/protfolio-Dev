@@ -3,7 +3,7 @@ name: Docker CI/CD
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the CI/CD pipeline on
+      - main  # Changes this to the branch you want to trigger the CI/CD pipeline on
 
 jobs:
   build-and-deploy:
