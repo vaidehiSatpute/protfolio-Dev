@@ -2,6 +2,7 @@
 FROM nginx:latest
 
 # Copy the website files to the default web server directory
+WORKDIR . /app
 COPY . /usr/share/nginx/html
 
 # Expose the port that the website will be running on
